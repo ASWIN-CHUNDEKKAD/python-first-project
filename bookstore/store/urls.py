@@ -5,7 +5,7 @@ from django.contrib.auth import views as auth_views
 from store.controller import authview, cart, wishlist,checkout,order
 
 urlpatterns = [
-    # homepage,category
+    # homepage,category,product listing,product view, authors,about us,
     path('',views.home,name='home'),
     path('category',views.category,name='category'),
     path('category/<str:name>',views.categoryview,name='categoryview'),

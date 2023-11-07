@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-h$n&-uy$r-8fln5awh^mk6l90t&b^5(0%2#9n7xp-@3eju^af'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG' , cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -167,3 +168,7 @@ EMAIL_HOST_USER = "aswinckd1212@gmail.com"
 EMAIL_HOST_PASSWORD = "qreptdvkbxwybkqr"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+
+# Activate django heroku
+django_heroku.settings(locals())
