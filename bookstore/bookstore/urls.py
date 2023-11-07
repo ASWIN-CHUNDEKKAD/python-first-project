@@ -20,12 +20,17 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+# from django.views.static import serve
+# from django.conf.urls import url
+
 urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
     path('admin_tools_stats/', include('admin_tools_stats.urls')), #DJANGO TOOL STATS FOR GENERATING VARIOUS GRAPH REPORTS
-    path('',include('store.urls'))
+    path('',include('store.urls')),
+    # url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    # url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
 
 if settings.DEBUG:
